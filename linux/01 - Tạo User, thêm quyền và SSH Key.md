@@ -14,7 +14,22 @@ passwd songokute
 * Khi đó shell sẽ hỏi mình điền mật khẩu mới
 
 ## Gán quyền
+For a refresher on editing files with vim see: New User Tutorial: Overview of the Vim Text Editor
 
+visudo
+
+Find the following code:
+
+## Allow root to run any commands anywhere
+root ALL=(ALL) ALL
+
+In this case, we’re granting root privileges to the user mynewuser . Add the following below that code:
+
+mynewuser ALL=(ALL) ALL
+
+Then exit and save the file with the command :wq .
+
+If you’ve followed the instruction above correctly, then you should now have a user setup by the name of mynewuser which can use sudo to run commands as root!
 ## Thêm SSH key
 * Đăng nhập vào user *songokute*
 * Nếu tồn tại thư mục .ssh ở home rồi thì:
